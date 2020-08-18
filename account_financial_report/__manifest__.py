@@ -18,6 +18,7 @@
         'date_range',
         'report_xlsx',
     ],
+
     'data': [
         'wizard/aged_partner_balance_wizard_view.xml',
         'wizard/general_ledger_wizard_view.xml',
