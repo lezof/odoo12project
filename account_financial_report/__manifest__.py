@@ -12,6 +12,7 @@
               'redCOR AG,'
               'Eficent,'
               'Odoo Community Association (OCA)',
+
     "website": "https://odoo-community.org/",
     'depends': [
         'account',
