@@ -10,7 +10,7 @@
     'author': 'Camptocamp SA,'
               'initOS GmbH,'
               'redCOR AG,'
-              'Eficent,'
+              'Eficent,' 
               'Odoo Community Association (OCA)',
 
     "website": "https://odoo-community.org/",
