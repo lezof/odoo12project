@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_costing_view_tree" model="ir.ui.view">
+        <field name="name">invoice.costing.view.tree</field>
+        <field name="model">invoice.costing</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Costing">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="shipping_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="invoice_costing_view_form" model="ir.ui.view">
+        <field name="name">invoice.costing.view.form</field>
+        <field name="model">invoice.costing</field>
+        <field name="arch" type="xml">
+            <form string="Invoice Costing">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="shipping_amount" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="invoice_costing_action" model="ir.actions.act_window">
+        <field name="name">Invoice Costing</field>
+        <field name="res_model">invoice.costing</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+    
+    <menuitem id="invoice_costing_menu"
+        action="invoice_costing_action"
+        parent="account.account_account_menu" 
+        sequence="8"/>
+    
+
+    
+<!--
+    <record id="city_view_tree" model="ir.ui.view">
+        <field name="model">res.city</field>
+        <field name="inherit_id" ref="base_address_city.view_city_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state_id']" position="after">
+                    <field name="payment_cod" />
+            </xpath>
+        </field>
+    </record>
+-->
+
+
+</odoo>

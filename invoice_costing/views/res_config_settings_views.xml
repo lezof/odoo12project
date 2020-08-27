@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.account.accountant</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <div data-key="account" position="attributes">
+                <attribute name="data-string">Accounting</attribute>
+                <attribute name="string">Accounting</attribute>
+            </div>
+            <xpath expr="//div[@id='invoicing_settings']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Shipping Cost</span>
+                        <div class="text-muted">
+                            Account Shipping Cost
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="invoice_shipping" class="col-lg-3 o_light_label"/>
+                                <field name="invoice_shipping"/>
+
+                                <label for="shipping_cost_outside_ksa" class="col-lg-3 o_light_label"
+                                       string="Shipping Cost Outside KSA"/>
+                                <field name="shipping_cost_outside_ksa"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Payment on COD</span>
+                        <div class="text-muted">
+                            Account Payment on COD
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="payment_cod_inside" class="col-lg-3 o_light_label"
+                                       string="COD Cities (Riyadh, Dammam, Jeddah)"/>
+                                <field name="payment_cod_inside"/>
+
+                                <label for="payment_cod_outside" class="col-lg-3 o_light_label"
+                                       string="COD (Other Cities)"/>
+                                <field name="payment_cod_outside"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Vendor Bill</span>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="bill_shipping_cost" class="col-lg-5 o_light_label"
+                                       string="Shipping cost"/>
+                                <field name="bill_shipping_cost"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="bill_receiving_product" class="col-lg-5 o_light_label"
+                                       string="Receiving product"/>
+                                <field name="bill_receiving_product"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Shipping Packaging</span>
+                        <div class="text-muted">
+                            Account Shipping Packaging
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="shipping_packaging" class="col-lg-3 o_light_label"
+                                       string="List of products until 4 or less than 4 "/>
+                                <field name="shipping_packaging"/>
+                            </div>
+
+                            <div class="row mt16">
+                                <label for="shipping_packaging_more_four" class="col-lg-3 o_light_label"
+                                       string="List of product more than 4"/>
+                                <field name="shipping_packaging_more_four"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Product Cost</span>
+                        <div class="text-muted">
+                            Account Product Cost
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="product_cost_fife_less" class="col-lg-3 o_light_label"
+                                       string="First FIVE products"/>
+                                <field name="product_cost_fife_less"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="product_cost_more_fife" class="col-lg-3 o_light_label"
+                                       string="More Than FIVE products"/>
+                                <field name="product_cost_more_fife"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Processing Abyas</span>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="processing_abyas" class="col-lg-3 o_light_label"
+                                       string="Processing Abyas"/>
+                                <field name="processing_abyas"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Gift Packaging Cost</span>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="gift_packaging_cost" class="col-lg-3 o_light_label"
+                                       string="Gift Packaging Cost"/>
+                                <field name="gift_packaging_cost"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Invoice Shipping Account</span>
+                        <div class="text-muted">
+                            Invoice Shipping Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="invoice_shipping_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="invoice_shipping_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="invoice_shipping_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="invoice_shipping_debit_account_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Payment cod Account</span>
+                        <div class="text-muted">
+                            Payment cod Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="payment_cod_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="payment_cod_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="payment_cod_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="payment_cod_debit_account_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Processing Abyas Account</span>
+                        <div class="text-muted">
+                            Processing Abyas Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="processing_abyas_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="processing_abyas_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="processing_abyas_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="processing_abyas_debit_account_id"/>
+                            </div>
+                        </div>
+                        <span class="o_form_label">Gift packaging Account</span>
+                        <div class="text-muted">
+                            Gift packaging Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="gift_packaging_cost_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="gift_packaging_cost_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="gift_packaging_cost_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="gift_packaging_cost_debit_account_id"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Shipping packaging Account</span>
+                        <div class="text-muted">
+                            Shipping packaging Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="shipping_packaging_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="shipping_packaging_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="shipping_packaging_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="shipping_packaging_debit_account_id"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Product Cost Account</span>
+                        <div class="text-muted">
+                            Product Cost Account
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="product_cost_credit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="product_cost_credit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="product_cost_debit_account_id" class="col-lg-5 o_light_label"/>
+                                <field name="product_cost_debit_account_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Vendor Bill Account</span>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="bill_shipping_cost_debit_account_id" class="col-lg-5 o_light_label"
+                                       string="Shipping cost Debit account"/>
+                                <field name="bill_shipping_cost_debit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="bill_shipping_cost_credit_account_id" class="col-lg-5 o_light_label"
+                                       string="Shipping cost Credit account"/>
+                                <field name="bill_shipping_cost_credit_account_id"/>
+                            </div>
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="bill_receiving_product_debit_account_id" class="col-lg-5 o_light_label"
+                                       string="Receiving Product Debit account"/>
+                                <field name="bill_receiving_product_debit_account_id"/>
+                            </div>
+                            <div class="row mt16">
+                                <label for="bill_receiving_product_credit_account_id" class="col-lg-5 o_light_label"
+                                       string="Receiving Product Credit account"/>
+                                <field name="bill_receiving_product_credit_account_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

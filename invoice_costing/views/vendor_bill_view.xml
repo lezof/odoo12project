@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_supplier_form_view_001" model="ir.ui.view">
+            <field name="name">invoice supplier form view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='other_info']" position="after">
+                    <page name="vendor_bill_payments" string="Payments">
+                        <group>
+                            <group string="Payments">
+                                <field name="bill_shipping_cost" string="Shipping Cost" readonly="1"/>
+                                <field name="bill_receiving_product" string="Receiving Product" readonly="1"/>
+                                <field name="processing_abyas" string="Processing Abyas" readonly="1"/>
+                            </group>
+                            <group string="Payments Vat">
+                                <field name="vat_bill_shipping_cost" string="Vat Shipping Cost" readonly="1"/>
+                                <field name="vat_bill_receiving_product" string="Vat Receiving Product" readonly="1"/>
+                                <field name="vat_processing_abyas" string="Vat Processing Abyas" readonly="1"/>
+                            </group>
+                        </group>
+                        <group string="Payment Accounts">
+                            <group>
+                                <field name="bill_shipping_cost_credit_account_id" string="Shipping Cost Credit Account"
+                                    attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="bill_receiving_product_credit_account_id" string="Receiving Product Credit Account"
+                                     attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="processing_abyas_credit_account_id" string="Processing Abyas Credit Account"
+                                       attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="bill_shipping_cost_debit_account_id" string="Shipping Cost Debit Account"
+                                     attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="bill_receiving_product_debit_account_id" string="SReceiving Product Debit Account"
+                                    attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="processing_abyas_debit_account_id" string="Processing Abyas Debit Account"
+                                    attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
